@@ -54,7 +54,7 @@ const HotelDetails = () => {
   };
 
   const hotelImage = Array.isArray(hotel.image) && hotel.image.length > 0 
-    ? `http://localhost:5000/${hotel.image[0]}` 
+    ? `https://abg-hotel-reservation-api.onrender.com/${hotel.image[0]}` 
     : 'default-image.jpg';
 
   return (
@@ -63,7 +63,7 @@ const HotelDetails = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
           <img 
-            src={`http://localhost:5000/${Array.isArray(hotel.image) ? hotel.image[0] : hotel.image}`} 
+            src={`https://abg-hotel-reservation-api.onrender.com/${Array.isArray(hotel.image) ? hotel.image[0] : hotel.image}`} 
             className="w-full h-96 object-cover rounded-lg" 
             alt={hotel.name || 'Hotel Image'} 
           />
@@ -93,7 +93,7 @@ const HotelDetails = () => {
               <p className="text-[#b99470] mb-2"><b>Price: ₦{room.price} / night</b></p>
               <p className="text-sm text-gray-500 mb-4">{room.description.substring(0, 100)}...</p>
               <img 
-                src={`http://localhost:5000/${room.image && room.image.length > 0 ? room.image[0] : 'default-room-image.jpg'}`} 
+                src={`https://abg-hotel-reservation-api.onrender.com/${room.image && room.image.length > 0 ? room.image[0] : 'default-room-image.jpg'}`} 
                 className="w-full h-32 object-cover rounded" 
                 alt={room.name || 'Room Image'} 
               />

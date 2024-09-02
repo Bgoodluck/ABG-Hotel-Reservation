@@ -3,12 +3,12 @@ import { useEcom } from '../context/EcomContext';
 import axios from 'axios';
 
 function UserBookings  ()  {
-    const { currentUser } = useEcom(); // Fetch the current user from context
-    const [bookings, setBookings] = useState([]); // State to store the booking data
-    const [loading, setLoading] = useState(true); // State to handle loading state
-    const [error, setError] = useState(null); // State to handle errors
+    const { currentUser } = useEcom(); 
+    const [bookings, setBookings] = useState([]); 
+    const [loading, setLoading] = useState(true); 
+    const [error, setError] = useState(null); 
 
-    // Fetch user's bookings when the component mounts
+    
     useEffect(() => {
         const fetchUserBookings = async () => {
             if (!currentUser) {
@@ -18,17 +18,17 @@ function UserBookings  ()  {
             }
 
             try {
-                const token = localStorage.getItem('token'); // Retrieve token from local storage
+                const token = localStorage.getItem('token'); 
                 if (!token) {
                     throw new Error('No authentication token found');
                 }
 
-                const response = await axios.get('http://localhost:5000/api/bookings/bookings', {
+                const response = await axios.get('https://abg-hotel-reservation-api.onrender.com/api/bookings/bookings', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 console.log('User bookings:', response.data);
                 
-                setBookings(response.data.bookings); // Set bookings data from API response
+                setBookings(response.data.bookings); 
             } catch (err) {
                 console.error('Error fetching user bookings:', err.message);
                 setError(err.message || 'An error occurred while fetching bookings');
@@ -42,11 +42,10 @@ function UserBookings  ()  {
 
     
 
-    if (loading) return <div>Loading booking information...</div>; // Display loading message
+    if (loading) return <div>Loading booking information...</div>; 
 
-    if (error) return <div>Error: {error}</div>; // Display error message
-
-    if (bookings.length === 0) return <div>No bookings found.</div>; // Handle case with no bookings
+    if (error) return <div>Error: {error}</div>; 
+    if (bookings.length === 0) return <div>No bookings found.</div>; 
 
     // Render booking information
     return (

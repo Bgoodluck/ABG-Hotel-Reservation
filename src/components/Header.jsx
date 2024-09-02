@@ -9,7 +9,7 @@ const Header = () => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const navigate = useNavigate();
 
-  const userImage = userProfile?.image ? `http://localhost:5000/uploads/${userProfile.image}` : avatar;
+  const userImage = userProfile?.image ? `https://abg-hotel-reservation-api.onrender.com/uploads/${userProfile.image}` : avatar;
 
   const handleLogout = () => {
     logout();

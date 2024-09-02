@@ -37,7 +37,7 @@ const Payment = () => {
           userName: bookingData.userName,
         });
 
-        const response = await axios.post('http://localhost:5000/api/payment/create', {
+        const response = await axios.post('https://abg-hotel-reservation-api.onrender.com/api/payment/create', {
           userId: bookingData.userId,
           bookingId: bookingData.bookingId,
           amount: bookingData.totalPrice,

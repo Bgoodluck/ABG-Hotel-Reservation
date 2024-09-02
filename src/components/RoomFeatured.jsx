@@ -61,7 +61,7 @@ const RoomFeatured = () => {
       {hotelRoom ? (
         <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
           <img
-            src={`http://localhost:5000/${hotelRoom.image && hotelRoom.image.length > 0 ? hotelRoom.image[0] : 'default-room-image.jpg'}`}
+            src={`https://abg-hotel-reservation-api.onrender.com/${hotelRoom.image && hotelRoom.image.length > 0 ? hotelRoom.image[0] : 'default-room-image.jpg'}`}
             alt={hotelRoom.name}
             className="w-full h-64 object-cover object-center transition-opacity duration-500 ease-in-out hover:opacity-80"
           />

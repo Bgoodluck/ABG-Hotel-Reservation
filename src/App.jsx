@@ -25,7 +25,7 @@ function App() {
       <HotelProvider>
         <Header />
         <Routes>
-          {/* Adjust pathing to be relative */}
+          
           <Route path="/" element={<HomePage />} />
           <Route path="listing" element={<HotelListing />} />
           <Route path="hotel/:hotelId" element={<HotelDetails />} />

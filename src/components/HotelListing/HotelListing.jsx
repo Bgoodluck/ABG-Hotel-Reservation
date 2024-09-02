@@ -94,7 +94,7 @@ const HotelListing = () => {
             return (
               <div key={hotel._id} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img
-                  src={`http://localhost:5000/${
+                  src={`https://abg-hotel-reservation-api.onrender.com/${
                     Array.isArray(hotel.image) ? hotel.image[0] : hotel.image
                   }`}
                   className="w-full h-48 object-cover"
@@ -129,7 +129,7 @@ const HotelListing = () => {
                           <div>
                             {Array.isArray(room.image) && room.image.length > 0 ? (
                               <img
-                                src={`http://localhost:5000/${room.image[0]}`}
+                                src={`https://abg-hotel-reservation-api.onrender.com/${room.image[0]}`}
                                 className="w-14 h-14 object-cover"
                                 alt={room.name}
                               />
